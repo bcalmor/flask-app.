@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="home-background">
+    <img src="{{ url_for('static', filename='images/fondoIA1.png') }}" alt="Fondo de Pádel" class="background-image">
+   
+    <div class="home-content">
+        <h2 class="bienvenida"><span class="padel">Padel</span><span class="pro">Pr0</span><i class="fas fa-table-tennis"></i> <!-- Ícono de raqueta de tenis --></h2>
+        <p>Reserva tu pista de Pádel Online. Descubre nuestras actividades, torneos y mucho más.</p>
+   
+<section class="services">
+    <h2 class="main-title">Nuestros Servicios</h2>
+    <div class="services-container">
+        <div class="service">
+            <h3>Reserva de Pistas</h3>
+            <p>Accede a nuestra plataforma y reserva tu pista de pádel de forma rápida y sencilla. <br>Disponemos de 3 pistas cerradas.</p>
+            
+            <!-- Verificamos si el usuario está autenticado -->
+            {% if session.get('usuario') %}
+                <!-- Si el usuario está autenticado, mostramos el enlace a la página de reservas -->
+                <a href="{{ url_for('reservar_pista') }}">Haz clic aquí para reservar tu pista</a>
+            {% else %}
+                <!-- Si el usuario no está autenticado, mostramos el enlace a la página de login -->
+                <a href="{{ url_for('login') }}">Haz clic aquí para 
+                    reservar tu pista</a>
+            {% endif %}
+            
+            <img src="{{ url_for('static', filename='images/pistas.png') }}" alt="Pistas de Pádel" class="service-image">
+        </div>
+        
+
+        <div class="service">
+            <h3>Clases de Pádel</h3>
+            <p>Mejora tus habilidades con entrenadores profesionales. Clases para todos los niveles. <br> ¡No pierdas más tiempo y apuntáte!</p>
+            <a href="{{ url_for('clases') }}">Haz clic aquí para ver más información</a>
+            <img src="{{ url_for('static', filename='images/clases.png') }}" alt="Clases de Pádel" class="service-image">
+        </div>
+        <div class="service">
+            <h3>Torneos y Eventos</h3>
+            <p>Participa en nuestros torneos y eventos exclusivos. Inscríbete de manera Online. <br>¡Compite y gana premios increíbles!</p>
+            <a href="{{ url_for('torneos') }}">Haz clic para ver los torneos disponibles</a>
+            <img src="{{ url_for('static', filename='images/torneo.png') }}" alt="Torneos de Pádel" class="service-image">
+        </div>
+    </div>
+</section>
+</div>
+<section class="location">
+    <h2 class="main-title">Nuestra Ubicación</h2>
+    <p>Estamos en Calle Valencia, 6 - Mérida. </p>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.123456789012!2d-6.345678901234!3d38.912345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1234567890abcdef%3A0x1234567890abcdef!2sCalle%20Valencia%2C%206%2C%20M%C3%A9rida!5e0!3m2!1ses!2ses!4v1681234567890!5m2!1ses!2ses" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+{% endblock %}

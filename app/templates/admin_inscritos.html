@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Inscritos - Administración{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Inscritos a Torneos</h2>
+    {% if torneos %}
+        <table class="reservas-table">
+            <thead>
+                <tr>
+                    <th>Torneo</th>
+                    <th>Fecha</th>
+                    <th>Ubicación</th>
+                    <th>Inscritos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for torneo in torneos %}
+                <tr>
+                    <td>{{ torneo.nombre }}</td>
+                    <td>{{ torneo.fecha }}</td>
+                    <td>{{ torneo.ubicacion }}</td>
+                    <td>
+                        {% if torneo.inscritos %}
+                            <ul>
+                                {% for inscrito in torneo.inscritos %}
+                                <li>{{ inscrito }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No hay inscritos.</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay torneos registrados.</p>
+    {% endif %}
+</div>
+{% endblock %}

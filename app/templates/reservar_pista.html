@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Reservar Pista{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Reservar Pista</h2> <br>
+</div>
+<div class="reservar-pista">
+    <h3 class="card-title">💸 Tarifas de Pista</h3>
+    <li><strong>Pista para 2 personas:</strong> 10 €</li>
+    <li><strong>Pista para 4 personas:</strong> 20 €</li>
+
+
+   
+    <!-- Selección del tipo de pista -->
+    <div id="tipoPistaSelector">
+        <h3 class="card-title">🎾 Tipo de Pista</h3>
+        <div class="radio-group">
+            <label class="radio-option">
+                <input type="radio" name="tipoPista" value="pista2" checked>
+                Pista para <strong>2 personas</strong>
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="tipoPista" value="pista4">
+                Pista para <strong>4 personas</strong>
+            </label>
+    </div>
+
+    
+
+    <!-- Calendario -->
+    <div id="calendar">
+        <div id="month">
+            <button id="prevMonth" onclick="changeMonth(-1)">&#10094;</button>
+            <h3 id="monthName"></h3>
+            <button id="nextMonth" onclick="changeMonth(1)">&#10095;</button>
+        </div>
+        <div id="days"></div>
+    </div>
+
+    <!-- Horas disponibles -->
+    <div id="hours">
+        <h3>Horas disponibles <span id="selectedDate"></span></h3>
+        <h4>Mañana</h4>
+        <div id="morningSlots"></div>
+        <h4>Tarde</h4>
+        <div id="afternoonSlots"></div>
+    </div>
+
+    <!-- Resumen de la reserva -->
+    <div id="resumen" style="display: none;">
+        <h3>Resumen de la Reserva</h3>
+        <p id="resumenTexto"></p>
+        <button onclick="confirmarReserva()">Confirmar Reserva sin pago</button>
+        <a href="{{ url_for('pago') }}">
+            <button>Realizar Pago</button>
+        </a>
+        
+    </div>
+</div>
+<script src="{{ url_for('static', filename='calendar.js') }}"></script>
+<script>
+    function irAPago() {
+        // Verificar que las variables necesarias están definidas
+        if (!selectedDate || !selectedHour || !selectedPista) {
+            alert('Por favor, selecciona una fecha, hora y pista antes de continuar.');
+            return;
+        }
+    
+        const reserva = {
+            fecha: selectedDate,
+            hora: selectedHour,
+            numero_pista: selectedPista,
+            tipoPista: document.querySelector('input[name="tipoPista"]:checked').value
+        };
+    
+        // Guardar la reserva en el almacenamiento local
+        localStorage.setItem('reserva', JSON.stringify(reserva));
+    
+        // Redirigir a la página de pago
+        window.location.href = '/pago';
+    }
+    </script>
+{% endblock %}

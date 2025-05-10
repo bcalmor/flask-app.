@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Reservas - Administración{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Todas las Reservas</h2>
+    {% if reservas %}
+        <table class="reservas-table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Pista</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reserva in reservas %}
+                <tr>
+                    <td>{{ reserva.usuario }}</td>
+                    <td>{{ reserva.pista }}</td>
+                    <td>{{ reserva.fecha }}</td>
+                    <td>{{ reserva.hora }}</td>
+                    <td>
+                        Número de Pista: {{ reserva.numero_pista }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay reservas registradas.</p>
+    {% endif %}
+</div>
+{% endblock %}

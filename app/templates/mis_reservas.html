@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Reservas{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Mis Reservas</h2>
+</div>
+<div>
+    {% if reservas and reservas|length > 0 %}
+        <ul class="reservas-list">
+            {% for reserva in reservas %}
+                <li class="reserva-item">
+                    <h3>Reserva:</h3>
+                    <p><strong>Fecha:</strong> {{ reserva.fecha | datetimeformat }}</p>
+                    <p><strong>Hora:</strong> {{ reserva.hora }} h</p>
+                    <p><strong>Tipo de pista:</strong> 
+                        {% if reserva.pista == "pista2" %}
+                            Pista para dos personas
+                        {% elif reserva.pista == "pista4" %}
+                            Pista para cuatro personas
+                        {% else %}
+                            No especificado
+                        {% endif %}
+                    </p>
+                    <p><strong>Pista asignada:</strong> {{ reserva.numero_pista }}</p>
+                    <!-- Mostramos el club de la reserva -->
+                    <p><strong>Club:</strong> {{ reserva.club }}</p> <!-- Nuevo campo -->
+                    <button class="btn cancelar-btn" onclick="cancelarReserva('{{ reserva.fecha }}', '{{ reserva.hora }}', '{{ reserva.numero_pista }}')">
+                        Cancelar Reserva
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tienes reservas realizadas.</p>
+    {% endif %}
+</div>
+
+<script>
+async function cancelarReserva(fecha, hora, numeroPista) {
+    if (!confirm("¿Estás seguro de que deseas cancelar esta reserva?")) {
+        return;
+    }
+
+    console.log({ fecha, hora, numeroPista }); // Verificar los datos enviados
+
+    const response = await fetch('/api/cancelar_reserva', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fecha, hora, numero_pista: numeroPista }),
+    });
+
+    const data = await response.json();
+    if (data.error) {
+        alert(data.error);
+    } else {
+        alert(data.message);
+        location.reload(); // Recargar la página para actualizar la lista de reservas
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "nombre": "Club Pádel Mérida",
+        "ubicacion": "Calle Valencia, 6 - Mérida",
+        "latitud": 38.9161,
+        "longitud": -6.3446,
+        "horario": "Lunes a Domingo, 8:00 - 22:00",
+        "telefono": "+34 123 456 789",
+        "email": "info@clubmerida.com",
+        "servicios": [
+            "Clases de pádel",
+            "Alquiler de pistas",
+            "Tienda de equipamiento",
+            "Cafetería"
+        ],
+        "valoraciones": [
+            5
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Club Pádel Sevilla",
+        "ubicacion": "Avenida Andalucía, 45 - Sevilla",
+        "latitud": 37.3826,
+        "longitud": -5.9963,
+        "horario": "Lunes a Domingo, 9:00 - 23:00",
+        "telefono": "+34 987 654 321",
+        "email": "info@clubsevilla.com",
+        "servicios": [
+            "Clases de pádel",
+            "Torneos",
+            "Alquiler de pistas",
+            "Restaurante"
+        ],
+        "valoraciones": [
+            4, 5
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Club Pádel Valencia",
+        "ubicacion": "Calle de la Paz, 12 - Valencia",
+        "latitud": 39.4702,
+        "longitud": -0.3768,
+        "horario": "Lunes a Viernes, 10:00 - 20:00",
+        "telefono": "+34 654 321 987",
+        "email": "info@clubvalencia.com",
+        "servicios": [
+            "Clases de pádel",
+            "Alquiler de pistas",
+            "Zona de spa",
+            "Tienda de equipamiento"
+        ],
+        "valoraciones": [
+            3, 4, 5
+        ]
+    }
+]

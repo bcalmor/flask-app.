@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Noticias - PádelPro{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Noticias y Eventos</h2>
+    {% if noticias %}
+        {% for noticia in noticias %}
+        <div class="noticia">
+            <h3>{{ noticia.titulo }}</h3>
+            <p><strong>Fecha:</strong> {{ noticia.fecha }}</p>
+            <p>{{ noticia.contenido }}</p>
+            {% if noticia.imagen %}
+            <img src="{{ url_for('static', filename='images/' ~ noticia.imagen) }}" alt="Imagen de la noticia">
+            {% endif %}
+            
+            <!-- Botón Eliminar visible solo para administradores -->
+            {% if session.get('is_admin') %}
+            <form action="{{ url_for('delete_news', titulo=noticia.titulo) }}" method="POST" style="margin-top: 10px;">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    {% else %}
+        <p>No hay noticias disponibles en este momento.</p>
+    {% endif %}
+</div>
+{% endblock %}

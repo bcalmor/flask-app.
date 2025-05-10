@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Actividades de Pádel{% endblock %}
+
+{% block content %}
+<section>
+    <h2 class="main-title">Actividades</h2>
+    <div class="activity">
+        <h3><a href="{{ url_for('torneos') }}">Torneos</a></h3>
+        <p>Participa en nuestros torneos locales y regionales de pádel. ¡Compite con los mejores jugadores y gana premios increíbles!</p>
+    </div>
+    <div class="activity">
+        <h3><a href="{{ url_for('clases') }}">Clases de Pádel</a></h3>
+        <p>Mejora tus habilidades con nuestras clases impartidas por entrenadores profesionales. Disponibles para todos los niveles.</p>
+    </div>
+    <div class="activity">
+        <h3><a href="{{ url_for('pickleball') }}">Pickleball</a></h3>
+        <p>Explora el emocionante mundo del pickleball, un deporte similar al pádel.</p>
+    </div>
+    
+</section>
+{% endblock %}

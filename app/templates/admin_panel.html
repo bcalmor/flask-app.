@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Panel de Administración{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Panel de Administración</h2>
+
+    <div class="admin-section">
+        <h3>Agregar Torneo</h3>
+        <form action="{{ url_for('add_torneo') }}" method="POST">
+            <label for="nombre"><strong>Nombre del Torneo:</strong></label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="fecha"><strong>Fecha:</strong></label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora"><strong>Hora:</strong></label>
+        <input type="time" id="hora" name="hora" required>
+
+
+        <label for="ubicacion"><strong>Ubicación:</strong></label>
+        <input type="text" id="ubicacion" name="ubicacion" required>
+
+        <label for="precio"><strong>Precio:</strong></label>
+        <input type="text" id="precio" name="precio" required>
+
+        <label for="descripcion"><strong>Descripción:</strong></label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+
+        <label for="premios"><strong>Premios:</strong></label>
+        <textarea id="premios" name="premios" rows="5" required></textarea>
+           
+        <button type="submit" class="btn">Agregar Torneo</button>
+        </form>
+    </div>
+
+    <div class="admin-section">
+        <h3>Subir Noticias o Fotos</h3>
+        <form action="{{ url_for('upload_news') }}" method="POST" enctype="multipart/form-data">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="contenido">Contenido:</label>
+            <textarea id="contenido" name="contenido" required></textarea>
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen">
+            <button type="submit" class="btn">Subir</button>
+        </form>
+    </div>
+
+    <div class="admin-section">
+        <h3>Gestión de Reservas</h3>
+        <a href="{{ url_for('admin_reservas') }}" class="btn">Ver Todas las Reservas de Pistas</a>
+    
+    <div calss="admins-section">
+        <h3>Gestión de Torneos</h3>
+        <a href="{{ url_for('admin_inscritos') }}" class="btn">Ver Todos los inscritos a los Torneos</a>
+    </div>
+</div>
+{% endblock %}

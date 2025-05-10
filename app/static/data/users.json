@@ -1,0 +1,52 @@
+{
+    "users": [
+        {
+            "dni": "76261415P",
+            "nombre": "Belen",
+            "apellidos": "Caldera",
+            "telefono": "692986547",
+            "email": "becarlmsor@gmail.com",
+            "usuario": "belen",
+            "password": "scrypt:32768:8:1$Q0xd9RC0JxfnfANK$39d7c9302e2ea4e8684f33d28e8774e100039a80952452339c3c0c7b45a84b4117cd676b5902bc0175cc8e2e35bcca3533f2d7eb71c47414e50760a1322a77de",
+            "direccion": "",
+            "fecha_nacimiento": "1991-12-18"
+        },
+        {
+            "dni": "09152104Q",
+            "nombre": "Juan",
+            "apellidos": "Lopez Perez",
+            "telefono": "666333222",
+            "email": "juanperez@gmail.com",
+            "usuario": "juan",
+            "password": "scrypt:32768:8:1$b9HCMzyoZSuUQc87$907b174e7fbb3e9a55e10bbbe5c2378fdf9257cbf821276f2defe3517a0d768b9cfb88ea5e961334d0fec925ec7c96e23c73b61a0e183c7b8e8fcac4034f8801"
+        },
+        {
+            "dni": "00000000A",
+            "nombre": "Admin",
+            "apellidos": "Administrador",
+            "telefono": "000000000",
+            "email": "admin@padelpr0.com",
+            "usuario": "admin",
+            "password": "scrypt:32768:8:1$8czL4jSumvUpUtpC$7e589d4330fa0a0c61857324764af41bc7bf45506fe1ca69cf04175371e6e8a513c0ce110b2aeb33a2e41f645f11060f2a9ab6d864b70250ea7a8f66ba948a5a",
+            "is_admin": true
+        },
+        {
+            "dni": "76261211L",
+            "nombre": "Bel\u00e9n",
+            "apellidos": "Caldera Moreno",
+            "telefono": "692989904",
+            "email": "becalmor@gmail.com",
+            "usuario": "bcalmor",
+            "password": "scrypt:32768:8:1$sLAFiYJSKvEkjocj$7bd9638ccb29e763c1f945c2ef4745189b3c998511bd901726f12e4aa376232ac667832ac86477db2b3cb24fba04c011c4af7aba40a80b135733b131b7473de0"
+        },
+        {
+            "dni": "76254102Y",
+            "nombre": "PEPA",
+            "apellidos": "Lopez Perez",
+            "telefono": "666555444",
+            "email": "belen.calmor@icloud.com",
+            "usuario": "pepita",
+            "password": "scrypt:32768:8:1$Stjq348KYosLyC7s$116f3c5e0fead48a4aa35d92fe18fb9b8ae6f9e16c793bbc3dd91ff5f000e26ea772e3059c5aca9383f886832ea4f1b2efb9344866d85384b123be3e7aad5256"
+        }
+    ]
+}

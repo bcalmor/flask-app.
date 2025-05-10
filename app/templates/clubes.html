@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Clubes{% endblock %}
+
+{% block content %}
+<h2 class="main-title">Clubes</h2>
+<p>Explora los clubes de pádel disponibles en nuestra plataforma.</p>
+
+<div class="club-list">
+    {% for club in clubes %}
+    <div class="club">
+        <h3>{{ club.nombre }}</h3>
+        <p><strong>Ubicación:</strong> {{ club.ubicacion }}</p>
+        <p><strong>Horario:</strong> {{ club.horario }}</p>
+        <p><strong>Teléfono:</strong> {{ club.telefono }}</p>
+        <p><strong>Email:</strong> <a href="mailto:{{ club.email }}">{{ club.email }}</a></p>
+        
+        <!-- Formulario de valoración -->
+        <form method="POST" action="{{ url_for('valorar_club', club_id=club.id) }}">
+            <label for="rating">Valora este club:</label>
+            <select id="rating" name="rating" required>
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <button type="submit" class="btn">Enviar Valoración</button>
+        </form>
+
+        <!-- Formulario de contacto -->
+        <form method="POST" action="{{ url_for('contactar_club', club_id=club.id) }}">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Tu Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+
+        <!-- Mapa del club -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps?q={{ club.latitud }},{{ club.longitud }}&output=embed" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

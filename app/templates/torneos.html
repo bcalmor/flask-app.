@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Torneos{% endblock %}
+
+{% block content %}
+<section>
+    <h2 class="main-title">Torneos Disponibles</h2>
+    {% if torneos %}
+        {% for torneo in torneos %}
+        <div class="tournament">
+            <h3>{{ torneo.nombre }}</h3>
+            <p><strong>Fecha:</strong> {{ torneo.fecha }}</p>
+            <p><strong>Hora:</strong> {{ torneo.hora }}</p>
+            <p><strong>Ubicación:</strong> {{ torneo.ubicacion }}</p>
+            <p><strong>Precio:</strong> {{ torneo.precio }}</p>
+            <p><strong>Descripción:</strong> {{ torneo.descripcion }}</p>
+            <p><strong>Premios:</strong> {{ torneo.premios }}</p>
+            <button class="btn btn-primary" onclick="handleInscripcion(event, '{{ torneo.nombre }}')">Inscribirme</button>
+
+            <!-- Mostrar botones solo si el usuario es administrador -->
+            {% if session.get('is_admin') %}
+            <form action="{{ url_for('delete_torneo', nombre=torneo.nombre) }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+            <a href="{{ url_for('edit_torneo', nombre=torneo.nombre) }}" class="btn btn-secondary">Editar</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay torneos disponibles en este momento.</p>
+    {% endif %}
+</section>
+
+<!-- Modal de confirmación -->
+{% if session.get('usuario') %}
+<div id="modal-confirmacion" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h3>Confirmar Inscripción</h3>
+        <p id="torneo-info"></p>
+        <button class="btn" onclick="confirmarInscripcion()">Sí, inscribirme</button>
+        <button class="btn cancelar-btn" onclick="cerrarModal()">Cancelar</button>
+    </div>
+</div>
+{% endif %}
+
+<script>
+    function handleInscripcion(event, torneo) {
+        event.preventDefault();
+
+        // Mostrar el modal de confirmación
+        const modal = document.getElementById('modal-confirmacion');
+        const torneoInfo = document.getElementById('torneo-info');
+        torneoInfo.textContent = `¿Deseas inscribirte en el torneo "${torneo}"?`;
+        modal.dataset.torneo = torneo; // Guardar el nombre del torneo en el modal
+        modal.style.display = 'block';
+    }
+
+    function confirmarInscripcion() {
+        const modal = document.getElementById('modal-confirmacion');
+        const torneo = modal.dataset.torneo;
+
+        console.log("Enviando datos al servidor:", { torneo }); // Log para depuración
+
+        // Enviar la inscripción al servidor
+        fetch("/inscribir_torneo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ torneo })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Respuesta del servidor:", data); // Log para depuración
+            if (data.success) {
+                alert("¡Inscripción realizada con éxito!");
+                cerrarModal();
+                window.location.reload(); // Recargar la página para reflejar los cambios
+            } else {
+                alert("Hubo un problema con la inscripción. Inténtalo de nuevo.");
+            }
+        })
+        .catch(error => {
+            console.error("Error en la solicitud:", error); // Log para depuración
+            alert("Hubo un problema con la inscripción. Inténtalo de nuevo.");
+        });
+    }
+
+    function cerrarModal() {
+        const modal = document.getElementById('modal-confirmacion');
+        modal.style.display = 'none';
+    }
+</script>
+{% endblock %}

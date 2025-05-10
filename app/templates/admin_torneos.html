@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Administrar Torneos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Agregar Torneo</h2>
+    <form action="{{ url_for('add_torneo') }}" method="POST">
+        <label for="nombre"><strong>Nombre del Torneo:</strong></label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="fecha"><strong>Fecha:</strong></label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora"><strong>Hora:</strong></label>
+        <input type="time" id="hora" name="hora" required>
+
+
+        <label for="ubicacion"><strong>Ubicación:</strong></label>
+        <input type="text" id="ubicacion" name="ubicacion" required>
+
+        <label for="precio"><strong>Precio:</strong></label>
+        <input type="text" id="precio" name="precio" required>
+
+        <label for="descripcion"><strong>Descripción:</strong></label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+
+        <label for="premios"><strong>Premios:</strong></label>
+        <input type="text" id="premios" name="premios" required>
+
+        <button type="submit">Agregar Torneo</button>
+    </form>
+
+    <h2 class="main-title">Torneos Existentes</h2>
+    {% if torneos %}
+        <ul>
+        {% for torneo in torneos %}
+            <li>
+                <strong>{{ torneo.nombre }}</strong> - {{ torneo.fecha }} - {{ torneo.ubicacion }}
+                <form action="{{ url_for('delete_torneo', nombre=torneo.nombre) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay torneos registrados.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

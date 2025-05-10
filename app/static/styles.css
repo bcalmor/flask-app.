@@ -1,0 +1,1851 @@
+/* General styles */
+body {
+    background-color: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2C2C2C;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima igual a la altura de la ventana */
+}
+
+
+/* Header styles */
+
+.logo-link:hover {
+    text-decoration: none; /* Elimina el subrayado del link al pasar el ratón por encima */
+}
+
+/* Ajustar el header para que sea completamente responsivo y mantener el nombre del usuario con su menú desplegable */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1F2A44;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Ajustar el logo para que se centre en pantallas pequeñas */
+header h1 {
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-info-header {
+    font-family: "Arial", sans-serif; 
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #A3D900; /* Lima */
+    margin-top: 5px;
+    display: flex;
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+    align-items: center; /* Centra el contenido en el eje vertical */
+    gap: 15px; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Envuelve los elementos si es necesario */
+}
+
+.contact-info-header .icon {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.padel {
+    color: white;
+}
+.pro {
+    color: #A3D900;
+}
+
+
+/* Posiciona el menú de hamburguesa a la derecha */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Ajusta la posición desde la derecha */
+    top: 5px; /* Ajusta la posición desde la parte superior */
+}
+
+/* Estilo para el menú desplegable */
+.navbar {
+
+    padding: 10px 20px;
+}
+
+/* Ajustar el menú de navegación */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 5px 10px;
+}
+
+.nav-menu a {
+    color: #A3D900;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #A3D900;
+    color: #1F2A44;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-menu li a, .user-name {
+    color: #A3D900; /* Verde lima para que destaque sobre fondo oscuro */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.nav-menu li a:hover, .user-name:hover {
+    color: #FFFFFF; /* Blanco para destacar al pasar el mouse */
+    background-color: #1F2A44; /* Azul oscuro como fondo al hacer hover */
+    border-radius: 5px;
+}
+
+
+.user-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1F2A44;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+}
+
+.user-dropdown-content li {
+    margin: 5px 0;
+}
+
+.user-dropdown-content a {
+    color: #A3D900;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.user-dropdown-content a:hover {
+    background-color: #A3D900;
+    color: #1F2A44;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #1F2A44; 
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif; 
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.apartados {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #1F2A44; /* Azul */
+    border-radius: 10px;
+    background-color: #A3D900; /* Amarillo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h3 {
+    font-family: "Arial", sans-serif; 
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: #1F2A44; /* Azul */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container h4 {
+    color: #333; /* Gris oscuro */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.container p, .container ul {
+    color: #555; /* Gris oscuro */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.apartados ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.apartados ul li {
+    margin-bottom: 5px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #1F2A44;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #A3D900; 
+    outline: none;
+    box-shadow: 0 0 5px #1F2A44;;
+}
+
+/* Button styles */
+button[type="submit"] {
+    background: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+}
+
+button[type="submit"]:hover {
+    background: #A3D900;  /* Fondo más oscuro */
+    color: #1F2A44;
+}
+
+/* Botón principal */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1F2A44; /* Azul claro */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #1F2A44; /* Azul más oscuro */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+}
+
+/* Link styles */
+a {
+    text-decoration: none; /* Quitar subrayado */
+    color: #1F2A44; /* Azul */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+    color: #A3D900; /* Amarillo al pasar el cursor */
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-height: 130vh; /* O un valor que se ajuste mejor al contenido */
+}
+
+
+main .info h2 {
+    color: #1F2A44;
+    margin-bottom: 10px;
+}
+
+main .info p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Footer styles */
+footer {
+    background: #A3D900; /* Amarillo */
+    color: #1F2A44; /* Azul */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Ajusta el ancho del contenido del footer */
+    max-width: 1200px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333; /* Gris oscuro */
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1F2A44; /* Azul */
+    width: 100%; /* Centrar en pantallas pequeñas */
+}
+
+/* Reducir espacio entre el mapa y el footer */
+.location {
+    margin-bottom: 20px; /* Reducir el margen inferior */
+}
+
+/* Additional styles for better spacing */
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a {
+    font-size: 14px;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container h2 {
+    color: #1F2A44; /* Azul */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Ajustar el tamaño al contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-decoration: none; /* Quitar subrayado */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.actividades-list {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #1F2A44; /* Azul */
+    border-radius: 10px;
+    background-color: #A3D900; /* Amarillo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%;;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+}
+
+/* Styles for activities page */
+.activities {
+    padding: 20px;
+    text-align: center;
+}
+
+.activities h2 {
+    font-family: "Arial", sans-serif; /* Puedes reemplazarla con otra fuente bonita */
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: #1F2A44;
+    margin-bottom: 20px;
+}
+
+.activity {
+    background: #A3D900; 
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border-color: #1F2A44;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    text-align: left;
+}
+
+.activity h3 {
+    color: #1F2A44; /* Azul */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Ajustar el tamaño al contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-decoration: none; /* Quitar subrayado */
+    cursor: pointer; /* Mostrar cursor de enlace */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.activity h3:hover {
+    background-color: #1F2A44;  /* Fondo gris claro al pasar el cursor */
+    color: #A3D900 !important;
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Asegurar que los enlaces dentro de h3 también se vean correctamente */
+.activity h3 a {
+    color: inherit; /* Hereda el color del padre (h3) */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.activity h3 a:hover {
+    color: inherit; /* Hereda el color del padre (h3:hover) */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos para los mensajes de flash */
+.flashes {
+    margin: 20px 0;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Dropdown menu */
+.dropdown {
+    color: #1F2A44;;
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1F2A44; /* Azul */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #A3D900; /* Amarillo */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #A3D900; /* Fondo más oscuro */
+    color: #1F2A44;;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #1F2A44;
+    color: #A3D900;
+}
+
+/* Calendario */
+#calendar {
+    text-align: center; 
+    margin-bottom: 20px;
+    background-color: #1F2A44; /* Amarillo */
+    padding: 20px;
+    border: solid 1px #1F2A44;
+    border-radius: 10px;
+    color: #A3D900; /* Azul del encabezado */
+    width: 30%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el nombre del mes */
+#monthName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #A3D900; /* Amarillo para que contraste con el fondo azul */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nombre-dia {
+    font-size: 0.75em;
+    color: #666;
+    text-transform: capitalize;
+}
+
+
+/* Contenedor de los días de la semana */
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días de la semana */
+    gap: 5px;
+    margin-bottom: 10px; /* Separación entre los días de la semana y los números */
+}
+
+/* Estilo para los días de la semana */
+.week-day {
+    font-weight: bold;
+    text-align: center;
+    color: #A3D900; /* Amarillo para que contraste con el fondo azul */
+    background-color: #1F2A44; /* Azul */
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+/* Contenedor de los días del calendario */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días */
+    gap: 5px; /* Espaciado entre los días */
+    margin-top: 10px; /* Separación superior */
+}
+
+/* Estilo para los días vacíos */
+.day.empty {
+    background-color: transparent;
+    border: none;
+    cursor: default;
+}
+
+/* Estilo para los días del calendario */
+    .day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        margin: 0;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background-color: #1F2A44;
+        color: #A3D900;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+/* Estilo para los días deshabilitados */
+.day.disabled,
+.day.past {
+    background-color: #9ca3af;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+/* Día seleccionado */
+.day.selected {
+    background-color: #A3D900;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+#month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.day.available {
+    background-color: #1F2A44;
+    color: #A3D900;
+}
+
+.day.reserved,
+.day.occupied {
+    background-color: #ef4444;
+    color: white;
+    cursor: not-allowed;
+}
+
+
+
+.day.disabled {
+    color: #ccc;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.hour,
+.hour-slot {
+    padding: 10px 12px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #d1d5db;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+
+.hour.available,
+.hour-slot.available {
+    background-color: #1F2A44;
+    color: #A3D900;
+}
+
+.hour.reserved,
+.hour-slot.reserved {
+    background-color: #ef4444;
+    color: white;
+    cursor: not-allowed;
+}
+
+.hour.selected,
+.hour-slot.selected {
+    background-color: #A3D900;
+    color: #1F2A44;
+    font-weight: bold;
+}
+
+
+.hour-slot:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+.hour-slot.blocked {
+    background-color: #e5e7eb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+
+
+.btn.selected {
+    background-color: #A3D900; /* Amarillo */
+    color: #1F2A44; /* Azul */
+}
+
+/* Reservas list styles */
+.reservas-list {
+    list-style: none;
+    padding: 0;
+}
+
+.reserva-item {
+    color: #1F2A44;
+    border: 1px solid #1F2A44;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #A3D900;
+    width: 60%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reserva-item h3 {
+    margin-top: 0;
+    color: #1F2A44;
+}
+
+.reserva-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.reserva-item strong {
+    color: #000;
+}
+
+.cancelar-btn {
+    background-color: #c62828; /* Rojo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.reservar-pista {
+    border: 1px solid #1F2A44;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #A3D900;
+    width: 60%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cancelar-btn:hover {
+    background-color: #a00; /* Rojo más oscuro */
+}
+
+/* Títulos globales */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Arial", sans-serif; /* Puedes reemplazarla con otra fuente bonita */
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: #1F2A44; /* Azul */
+}
+
+
+
+/* Estilo para los títulos principales */
+.main-title {
+    color: #1F2A44; /* Azul */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado */
+    margin-bottom: 20px; /* Espaciado inferior */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Ajustar el tamaño al contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.informacion p {
+    color: #000;
+    font-weight: normal; /* Quitar negrita*/
+}
+
+/* Estilo para el fondo de la página de inicio */
+.home-background {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    background-color: #000; /* fallback por si no carga imagen */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+.home-content {
+    color: white; /* o lo que necesites para contraste */
+}
+
+.bienvenida {
+    color: #A3D900;
+}
+.lime-icon {
+    color: #A3D900;
+}
+
+
+
+
+/* Sección del mapa aparte */
+.location-section {
+    background-color: white;
+    padding: 60px 20px;
+}
+
+
+/* Torneos list styles */
+.torneos-list {
+    list-style: none;
+    padding: 0;
+}
+
+.torneos-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.torneos-list h3 {
+    margin: 0 0 10px;
+    color: #1F2A44;
+}
+
+.torneos-list p {
+    margin: 5px 0;
+}
+
+/* Estilo para el contenedor del usuario */
+.user-dropdown {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px; /* Separación del ícono de las tres rayas */
+    cursor: pointer;
+    color: #1F2A44; /* Azul */
+    font-weight: bold;
+}
+
+/* Nombre del usuario */
+.user-name {
+    padding: 10px 15px;
+    background-color: #A3D900; /* Amarillo */
+    border-radius: 5px;
+    font-size: 16px;
+    color:#1F2A44;
+}
+
+/* Contenido del menú desplegable del usuario */
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1F2A44; /* Azul */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 20; /* Asegura que el menú esté por encima de otros elementos */
+    border-radius: 5px;
+}
+
+.user-dropdown-content a {
+    color: #A3D900; /* Amarillo */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-dropdown-content a:hover {
+    background-color: #A3D900; /* Fondo amarillo */
+    color: #1F2A44; /* Azul */
+}
+
+/* Mostrar el menú desplegable al pasar el ratón */
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+}
+
+/* Estilos para la sección de torneos */
+.tournament {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #1F2A44; /* Azul */
+    border-radius: 10px;
+    background-color: #A3D900; /* Amarillo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%;;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tournament h3 {
+    font-family: "Arial", sans-serif; /* Puedes reemplazarla con otra fuente bonita */
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #1F2A44; /* Azul */
+    margin-bottom: 10px;
+  
+}
+
+.tournament p {
+    color: #333; /* Gris oscuro */
+    margin: 5px 0;
+}
+
+.tournament .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tournament .btn:hover {
+    background-color: #333; /* Gris oscuro */
+    color: #fff; /* Blanco */
+}
+
+/* Sección de servicios */
+
+.service {
+    flex: 1;
+    max-width: 45%; /* Ancho moderado */
+    text-align: center;
+}
+
+.services .service {
+    margin: 15px auto;
+    padding: 20px;
+    border: 1px solid #1F2A44;
+    border-radius: 12px;
+    background-color: #A3D900;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    max-width: 400px; /* Más ancho que antes, pero moderado */
+}
+
+.services .service h3 {
+    color: #1F2A44;
+    margin-bottom: 12px;
+    font-size: 1.5em;
+}
+
+.services .service p {
+    color: #333;
+    font-size: 1em;
+}
+
+/* Imágenes más anchas que altas, pero no excesivo */
+.service-image {
+    display: block;
+    margin: 15px auto;
+    width: 90%;
+    aspect-ratio: 4 / 3; /* Relación moderadamente horizontal */
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #1F2A44;
+    object-fit: cover;
+}
+
+.service img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+  
+    
+}
+
+
+/* Sección de ubicación */
+.location {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Reducir el margen inferior */
+}
+
+.location p {
+    color: white;
+
+}
+
+.location .map-container {
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* Sección de contacto */
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333; /* Gris oscuro */
+}
+
+/* Register page styles */
+.register-container {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.register-form {
+    background-color: #A3D900;; 
+    border-radius: 10px;
+    border-color: #1F2A44;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form {
+    background-color: #A3D900;; 
+    border-radius: 10px;
+    border-color: #1F2A44;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form label {
+    font-weight: bold;
+    color: #1F2A44; /* Azul */
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.register-form button[type="submit"] {
+    background: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button[type="submit"]:hover {
+    background: #1b5e20; /* Verde oscuro */
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.radio-option {
+    font-size: 1.05em;
+    background: #f2f7fd;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #cce0f8;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.radio-option:hover {
+    background-color: #e5f1ff;
+}
+
+.radio-option input {
+    margin-right: 10px;
+}
+
+/* Cambiar el color del texto de los encabezados de mañana y tarde */
+#hours h4 {
+    color: #000; /* Negro */
+    font-weight: bold; /* Opcional: para resaltar */
+}
+
+/* Content styles */
+.content {
+    padding: 20px;
+    height: 2000px; /* Simula contenido largo */
+    background: linear-gradient(to bottom, #f0f0f0, #ccc);
+}
+
+/* Estilos para el formulario de pago con tarjeta */
+#tarjetaFormulario {
+    display: none;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#tarjetaFormulario h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tarjetaFormulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+#tarjetaFormulario form div {
+    margin-bottom: 15px;
+}
+
+#tarjetaFormulario label {
+    font-weight: bold;
+}
+
+#tarjetaFormulario input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#tarjetaFormulario button {
+    background-color: #1F2A44; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#tarjetaFormulario button:hover {
+    background-color: #1F2A44;
+}
+
+/* Estilo para la galería de imágenes */
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Coloca las imágenes una debajo de otra */
+    align-items: center;
+    gap: 30px; /* Espaciado entre las tarjetas */
+    margin-top: 20px;
+}
+
+.image-card {
+    text-align: center;
+    background-color: #A3D900;
+    border: 2px solid #1F2A44; /* Borde uniforme para todas las tarjetas */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%; /* Tamaño más grande para las tarjetas */
+    max-width: 800px; /* Limita el ancho máximo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho de la tarjeta */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1F2A44;
+}
+
+.image-card h3 {
+    color: #1F2A44;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.image-card p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+  
+}
+
+/* Efecto hover para las tarjetas */
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo especial para la tarjeta del artículo */
+.article-card {
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+.article-card img {
+    border: 1px solid #1F2A44;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.article-card h3 {
+   color: #1F2A44;
+}
+ .article-card p {
+    color: #555;
+}
+
+/* Estilo para el footer */
+.footer {
+    background-color: #1F2A44;
+    color: white;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+
+    
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.footer-section h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #A3D900;
+}
+
+.footer-section p, .footer-section a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: #A3D900;
+}
+
+/* Estilo para los nombres de los métodos de pago */
+.payment-names {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.payment-names span {
+    margin-right: 10px;
+}
+
+/* Estilo para la imagen de métodos de pago */
+.payment-methods img {
+    background-color: #A3D900;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+    border-top: 1px solid #444;
+    padding-top: 8px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Estilo para el formulario de contacto */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #A3D900;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1F2A44;
+    outline: none;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1F2A44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #A3D900;
+    color: #1F2A44;
+    border: solid 1px;
+    border-color: #1F2A44;
+}
+
+/* Estilo para la tabla de reservas */
+.reservas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.reservas-table th, .reservas-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.reservas-table th {
+    background-color: #1F2A44;
+    color: #A3D900;
+    text-align: center;
+}
+
+.reservas-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.reservas-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para las secciones del panel de administración */
+.admin-section {
+    background-color: #A3D900; /* Amarillo */
+    border: 1px solid #1F2A44; /* Azul */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px; /* Limitar el ancho */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    text-align: left;
+    align-items: center;
+}
+
+.admin-section h3 {
+    color: #1F2A44; /* Azul */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.admin-section label {
+    font-weight: bold;
+    color: #1F2A44; /* Azul */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.admin-section input,
+.admin-section textarea,
+.admin-section button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.admin-section input:focus,
+.admin-section textarea:focus {
+    border-color: #1F2A44; /* Azul */
+    outline: none;
+    box-shadow: 0 0 5px #1F2A44;
+}
+
+.admin-section button {
+    background-color: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-section button:hover {
+    background-color: #1F2A44; /* Azul más oscuro */
+    color: #fff; /* Blanco */
+}
+
+/* Estilos generales para la lista de clubes */
+.club-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una fila */
+    gap: 20px; /* Espaciado entre los clubes */
+    justify-content: center; /* Centra los clubes horizontalmente */
+    margin: 20px 0;
+    padding: 0;
+}
+
+.club {
+    background-color: #A3D900; /* Fondo amarillo */
+    border: 1px solid #1F2A44; /* Borde azul */
+    border-radius: 10px;
+    padding: 30px; /* Más espacio interno */
+    width: 400px; /* Ancho más grande */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.club:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.club h3 {
+    font-size: 1.8rem; /* Título más grande */
+    margin-bottom: 15px;
+    color: #1F2A44; /* Azul */
+    text-align: center;
+}
+
+.club p {
+    margin: 10px 0;
+    font-size: 1rem; /* Texto más grande */
+    color: #333; /* Gris oscuro */
+}
+
+.club form {
+    margin-top: 15px;
+}
+
+.club button {
+    background-color: #1F2A44; /* Azul */
+    color: #A3D900; /* Amarillo */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.club button:hover {
+    background-color: #357ab8; /* Azul más oscuro */
+    color: #fff; /* Blanco */
+}
+
+/* Estilo para el mapa */
+#map {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid #1F2A44;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #1F2A44;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1F2A44;
+    padding-bottom: 8px;
+}
+
+.intro-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los grupos de niveles y precios */
+.level-group, .price-group, .coach, .price-block {
+    margin-bottom: 15px;
+}
+
+.level-group h4,
+.price-group h5 {
+    color: #1F2A44;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.apartados {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #1F2A44;
+    border-radius: 10px;
+    background-color: #A3D900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Submenús ocultos por defecto */
+.dropdown-content,
+.user-dropdown-content {
+    color: white;
+    display: none;
+    position: absolute;
+    background-color: #1F2A44;;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 10;
+    top: 100%;
+    left: 0;
+}
+
+/* Mostrar al pasar el mouse */
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: white;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    color: white
+}
+
+
+.dropdown-content a:hover {
+    background-color: #1F2A44;
+    color: white;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        display: none; /* Ocultar el menú principal en pantallas pequeñas */
+    }
+
+    .user-dropdown {
+        display: flex; /* Mantener el nombre del usuario visible */
+    }
+
+    .user-name {
+        font-size: 18px; /* Ajustar el tamaño del texto del usuario */
+    }
+}
+
+/* Media Queries para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reservas-list, .reservar-pista {
+        width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    }
+
+    .contact-info-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .contact-info-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan todo el ancho */
+    }
+
+    .reservas-list, .reservar-pista {
+        width: 100%; /* Ocupan todo el ancho */
+    }
+
+    .nav-menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .tournament {
+        width: 100%; /* Ajustar el ancho de los torneos */
+    }
+}
+
+/* Ajustar el footer para que sea completamente responsivo */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaciado entre las secciones del footer */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1 1 calc(33.333% - 20px); /* Tres columnas en pantallas grandes */
+    min-width: 200px; /* Ancho mínimo para pantallas pequeñas */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+    width: 100%;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/* Media Queries para ajustar el footer en pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Cambia a una sola columna */
+        align-items: center;
+    }
+
+    .footer-section {
+        flex: 1 1 100%; /* Cada sección ocupa todo el ancho */
+        text-align: center; /* Centrar el contenido */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        padding: 10px; /* Reducir el padding en pantallas muy pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Oculta el menú completo */
+    }
+
+    .user-menu {
+        display: flex; /* Muestra solo el nombre de usuario y el menú desplegable */
+        align-items: center;
+    }
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos de Pickleball{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="main-title">Pickleball</h2>
+    <p>Explora el emocionante mundo del pickleball, un deporte similar al pádel. Organizamos eventos y torneos para todos los interesados.</p>
+
+    <div class="image-gallery">
+         <!-- Imagen 3 con enlace al artículo -->
+         <div class="image-card ">
+            <h3>¿Qué es el Pickleball?</h3>
+            <a href="https://zcebra.com/que-es-el-pickleball/" target="_blank">
+                <img src="{{ url_for('static', filename='images/pickleball3.webp') }}" alt="Información sobre Pickleball" class="img-fluid">
+            </a>
+            <p>Aprende todo sobre pickleball.</p>
+        </div>
+        <!-- Imagen 1 -->
+        <div class="image-card">
+            <h3>Reglas Partidos de Pickleball</h3>
+            <a href="https://fpp.org.es/reglas-oficiales-para-jugar-pickleball/" target="_blank">
+                <img src="{{ url_for('static', filename='images/pickleball1.jpg') }}" alt="Partido de Pickleball" class="img-fluid">
+            </a>
+            <p>Reglas Oficiales para Jugar Pickleball. Resumen de instrucciones más relevantes basadas en el libro oficial para aprender a jugar Pickleball y tener éxito.</p>
+        </div>
+
+        <!-- Imagen 2 -->
+        <div class="image-card">
+            <h3>Jugadores en Acción. ¿Donde jugar al Pickleball?</h3>
+            <a href="https://zcebra.com/donde-jugar-pickleball/" target="_blank">
+                <img src="{{ url_for('static', filename='images/pickleball2.png') }}" alt="Jugadores de Pickleball" class="img-fluid">
+            </a>
+            <p>Descubre donde jugar a Pickleball en España. Únete a otros jugadores apasionados y mejora tus habilidades en un ambiente competitivo y amigable.</p>
+        </div>
+
+       
+    </div>
+</div>
+{% endblock %}

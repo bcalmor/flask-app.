@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Actividades{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Mis Actividades</h2>
+</div>
+<div>
+    <ul class="actividades-list">
+        {% for actividad in actividades %}
+        <li>
+            <h3>{{ actividad.nombre }}</h3>
+            <p><strong>Fecha del torneo:</strong> {{ actividad.fecha }}</p>
+            <p><strong>Hora:</strong> {{ actividad.hora }}</p>
+            <p><strong>Ubicación:</strong> {{ actividad.ubicacion }}</p>
+            <p><strong>Descripción:</strong> {{ actividad.descripcion }}</p>
+            <p><strong>Precio inscripción:</strong> {{ actividad.precio }}</p>
+            <p><strong>Premio:</strong> {{ actividad.premios }}</p>
+            <button class="btn cancelar-btn" onclick="cancelarInscripcion('{{ actividad.nombre }}')">
+                Cancelar Inscripción
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+async function cancelarInscripcion(torneo) {
+    if (!confirm("¿Estás seguro de que deseas cancelar tu inscripción a este torneo?")) {
+        return;
+    }
+
+    const response = await fetch('/api/cancelar_inscripcion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ torneo }),
+    });
+
+    const data = await response.json();
+    if (data.error) {
+        alert(data.error);
+    } else {
+        alert(data.message);
+        location.reload(); // Recargar la página para actualizar la lista de actividades
+    }
+}
+</script>
+{% endblock %}

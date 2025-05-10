@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Pago Torneo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Pago de Inscripción</h2>
+    <p>Estás a punto de inscribirte en el torneo: <strong id="torneoNombre"></strong></p>
+    <p>Precio: <strong id="torneoPrecio"></strong> €</p>
+
+    <button onclick="pagarConTarjeta()">Pagar con Tarjeta</button>
+    <button onclick="pagarConPayPal()">Pagar con PayPal</button>
+</div>
+
+<script>
+    const torneo = JSON.parse(localStorage.getItem('torneo'));
+
+    document.getElementById('torneoNombre').textContent = torneo.torneo;
+    document.getElementById('torneoPrecio').textContent = torneo.precio;
+
+    function pagarConTarjeta() {
+        alert("Pago con tarjeta realizado correctamente.");
+        confirmarPago();
+    }
+
+    function pagarConPayPal() {
+        alert("Redirigiendo a PayPal...");
+        confirmarPago();
+    }
+
+    function confirmarPago() {
+        fetch('/confirmar_pago_torneo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(torneo)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                localStorage.removeItem('torneo');
+                window.location.href = '/mis_actividades';
+            } else {
+                alert(data.error);
+            }
+        });
+    }
+</script>
+{% endblock %}

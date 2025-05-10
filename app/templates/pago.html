@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Pago{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Realizar Pago</h2>
+    <p>Selecciona un método de pago:</p>
+    
+    <button onclick="pagarConTarjeta()">Pagar con Tarjeta</button>
+    <button onclick="pagarConPayPal()">Pagar con PayPal</button>
+    
+    <!-- Formulario de Pago con Tarjeta (invisible al principio) -->
+    <div id="tarjetaFormulario" style="display: none;">
+        <h3>Detalles de la Tarjeta</h3>
+        <form id="formularioTarjeta">
+            <label for="nombreTitular">Nombre del Titular</label>
+            <input type="text" id="nombreTitular" name="nombreTitular" required>
+            <label for="numeroTarjeta">Número de Tarjeta</label>
+            <input type="text" id="numeroTarjeta" name="numeroTarjeta" required>
+            
+            <label for="fechaExpiracion">Fecha de Expiración</label>
+            <input type="text" id="fechaExpiracion" name="fechaExpiracion" placeholder="MM/AA" required>
+            
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required>
+            
+            <button type="submit">Pagar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Mostrar formulario de tarjeta cuando se selecciona pagar con tarjeta
+function pagarConTarjeta() {
+    document.getElementById("tarjetaFormulario").style.display = "block"; // Mostrar formulario
+    document.getElementById("formularioTarjeta").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto de formulario
+        procesarPagoConTarjeta();
+    });
+}
+
+// Procesar el pago con tarjeta (aquí lo simula, en la vida real usarías una API como Stripe)
+function procesarPagoConTarjeta() {
+    // Simulamos que el pago con tarjeta fue exitoso
+    alert("Pago con tarjeta realizado correctamente");
+
+    // Limpiar y redirigir a la página de reservas
+    localStorage.removeItem('reserva');
+    window.location.href = '/mis_reservas';
+}
+
+// Redirigir a PayPal cuando se elige el pago por PayPal
+function pagarConPayPal() {
+    alert('Redirigiendo a PayPal...');
+    // Aquí debes colocar la URL de PayPal con los parámetros necesarios para completar el pago
+    window.location.href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XXXXXXXXXXXX';
+}
+</script>
+
+{% endblock %}
