@@ -3,3 +3,4 @@ Flask-Login==0.6.2
 Werkzeug==2.2.2
 jsonschema==4.4.0
 Flask-Mail
+apscheduler
